@@ -18,7 +18,7 @@ const FeaturedItem = () => {
                     <p>March 24, 2024</p>
                     <h2 className="uppercase">Where can i get some?</h2>
                     <p>Indulge in our exquisite Truffle Mushroom Risotto, a luxurious blend of creamy Arborio rice, earthy wild mushrooms, and fragrant truffle oil. Garnished with freshly grated Parmesan and a sprinkle of parsley, this dish is the epitome of gourmet comfort food. Perfectly balanced and decadently delicious, it is a must-try for any food enthusiast.</p>
-                    <button className="btn btn-outline text-white">Order Now</button>
+                    <button className="btn btn-outline text-white border-0 border-b-4">Order Now</button>
 
                 </div>
             </div>
