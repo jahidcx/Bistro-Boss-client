@@ -29,10 +29,10 @@ const OurMenu = () => {
             ></Cover>
             <SectionTitle subHeading={"Don't miss"} heading={"Today's offer"}></SectionTitle>
             <MenuCategory items={offered}></MenuCategory>
-            <MenuCategory items={dessert} img={dessertImg} title={"Deserts"} subTitle={"That is so delicious"}></MenuCategory>
-            <MenuCategory items={pizza} img={pizzaImg} title={"pizzas"} subTitle={"That is so delicious"}></MenuCategory>
-            <MenuCategory items={salad} img={saladImg} title={"salads"} subTitle={"That is so delicious"}></MenuCategory>
-            <MenuCategory items={soup} img={soupImg} title={"soups"} subTitle={"That is so delicious"}></MenuCategory>
+            <MenuCategory items={dessert} img={dessertImg} title={"desert"} subTitle={"That is so delicious"}></MenuCategory>
+            <MenuCategory items={pizza} img={pizzaImg} title={"pizza"} subTitle={"That is so delicious"}></MenuCategory>
+            <MenuCategory items={salad} img={saladImg} title={"salad"} subTitle={"That is so delicious"}></MenuCategory>
+            <MenuCategory items={soup} img={soupImg} title={"soup"} subTitle={"That is so delicious"}></MenuCategory>
             
            
         </div>
