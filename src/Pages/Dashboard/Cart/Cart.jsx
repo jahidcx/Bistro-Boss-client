@@ -3,10 +3,11 @@ import SectionTitle from "../../../Components/SectionTitle";
 import useCart from "../../../Hook/useCart";
 import Swal from "sweetalert2";
 import UseAxiosSecure from "../../../Hook/UseAxiosSecure";
+import { Link } from "react-router-dom";
 
 
 const Cart = () => {
-    const [cart,refetch] = useCart();
+    const [cart, refetch] = useCart();
     const axiosSecure = UseAxiosSecure();
 
 
@@ -50,7 +51,10 @@ const Cart = () => {
                 <div className="flex justify-evenly ">
                     <h3 className="text-3xl font-semibold ">Total Orders: {cart.length}</h3>
                     <h3 className="text-3xl font-semibold ">Total Price: ${totalPrice}</h3>
-                    <button className="btn bg-[#D1A054] border-none text-white text-xl ">Pay</button>
+                    {cart.length ?
+                        <Link to='/dashboard/reservation'><button className="btn bg-[#D1A054] border-none text-white text-xl ">Pay</button></Link> :
+                        <button disabled className="btn bg-[#D1A054] border-none text-white text-xl ">Pay</button>
+                    }
                 </div>
                 <div className="mx-40 mt-5">
 

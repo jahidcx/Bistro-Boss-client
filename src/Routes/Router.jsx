@@ -13,6 +13,7 @@ import AddItems from "../Pages/Dashboard/AddItems/AddItems";
 import AdminRoute from "./AdminRoute";
 import ManageItems from "../Pages/Dashboard/ManageItems/ManageItems";
 import UpdateItem from "../Pages/Dashboard/UpdateItem/UpdateItem";
+import Payment from "../Pages/Dashboard/Payment/Payment";
 
 
 const router = createBrowserRouter([
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
             {
                 path:'/dashboard/cart',
                 element:<Cart></Cart>
+            },
+            {
+                path: '/dashboard/reservation',
+                element: <Payment></Payment>
             },
 
 
