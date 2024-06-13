@@ -4,6 +4,7 @@ import UseAxiosSecure from "../../../Hook/UseAxiosSecure";
 import useCart from "../../../Hook/useCart";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const CheckOutForm = () => {
     const [error, setError] = useState('');
@@ -14,6 +15,7 @@ const CheckOutForm = () => {
     const elements = useElements();
     const axiosSecure = UseAxiosSecure();
     const [cart,refetch] = useCart();
+    const navigate = useNavigate();
 
     // console.log(cart);
 
@@ -102,6 +104,7 @@ const CheckOutForm = () => {
                         showConfirmButton: false,
                         timer: 1500
                       });
+                      navigate('/dashboard/paymentHistory')
                 }
 
             }

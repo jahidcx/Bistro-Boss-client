@@ -4,14 +4,16 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 import { useQuery } from "@tanstack/react-query";
 import UseAxiosSecure from "../../../Hook/UseAxiosSecure";
 
+
 const PaymentHistory = () => {
     const { user } = useContext(AuthContext);
     const axiosSecure = UseAxiosSecure();
+   
 
-    const { data: payments } = useQuery({
+    const { data: payments = [] } = useQuery({
         queryKey: ['payments', user.email],
         queryFn: async () => {
-            const res = await axiosSecure.get(`/payments/${user?.email}`)
+            const res = await axiosSecure.get(`/payments/${user.email}`)
             console.log(res.data);
             return res.data;
         }
@@ -20,11 +22,12 @@ const PaymentHistory = () => {
         <div>
             <SectionTitle subHeading={"At A Glance"} heading={"Payment History"}></SectionTitle>
             <div className="max-w-4xl mx-auto">
-                {/* <h2 className="text-3xl font-semibold">Total Payment: {payments.length}</h2> */}
+                {/* <h2 className="text-3xl">total payment:{payments.length}</h2> */}
+                <h2 className="text-3xl">Total payments:{payments.length}</h2>
 
-                <div className="mx-40 mt-5">
+                <div className=" mt-5">
 
-                    <div className="overflow-x-auto">
+                    <div className="">
                         <table className="table mb-16">
                             {/* head */}
                             <thead className="bg-[#D1A054] text-white text-lg">
@@ -33,7 +36,7 @@ const PaymentHistory = () => {
                                         #
                                     </th>
                                     <th>Email</th>
-                                    <th>TransactionId</th>
+                                    <th>Transaction ID</th>
                                     <th>Price</th>
                                     <th>Date</th>
                                     <th>status</th>
@@ -52,12 +55,9 @@ const PaymentHistory = () => {
                                             {payment.transactionId}
                                         </td>
                                         <td>${payment.price}</td>
-                                        <th>
-                                            {payment.date}
-                                        </th>
-                                        <th>
-                                            {payment.status}
-                                        </th>
+                                        <td>{payment.date}</td>
+                                        <td>{payment.status}</td>
+                                        
                                     </tr>)
                                 }
                             </tbody>
@@ -65,6 +65,8 @@ const PaymentHistory = () => {
                         </table>
                     </div>
                 </div>
+
+
             </div>
 
         </div>
